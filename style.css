@@ -24,18 +24,18 @@ html {
     cursor: context-menu;
 }
 
-:target { /* Aby Navbar nepřekrýval prvek ke kterému vede link */
+/* For navbar not to overlap link that it leads to */
+:target { 
     scroll-margin-top: 8.4vh;
 }
 
 body {
-    position: relative; /* navbar bude mít position: sticky; */
+    position: relative; /* Navbar position: sticky; */
     font-family: 'Montserrat', sans-serif;
     background:var(--šedá);
     font-size: 1.1rem;
     line-height: 1.5;
     overflow-x: hidden;
-    
 }
 
 a {
@@ -57,7 +57,7 @@ a {
 	cursor: pointer;
 	display: inline-block;
     
-    border-radius: 10px; /*15px*/
+    border-radius: 10px;
     font-weight: bold;
     margin: 20px;
 	
@@ -68,6 +68,7 @@ a {
     height: 50px;
     width: 246px;
     padding: 5px 20px;
+    transition: 100ms;
 }
 
 @keyframes pulse {
@@ -84,16 +85,13 @@ a {
 
 .btn2 {
 	cursor: pointer;
-	display: inline-block;
-    
+	display: inline-block;   
     border-radius: 10px;
     font-weight: bold;
     margin: 20px;
-	
 	background: var(--světlá-modrá);
 	color: var(--šedá);
     font-size: 1.6rem;
-
     height: 50px;
     width: 246px;
     padding: 0px 20px;
@@ -101,15 +99,11 @@ a {
 
 .btn3 {
 	cursor: pointer;
-	display: inline-block;
-    
+	display: inline-block;  
     border-radius: 10px;
     margin: 0.5vh;
-	
 	background: var(--tmavá-modrá);
 	color: var(--šedá);
-    
-
     height: 50px;
     width: 1146px;
     padding: 7px 20px;
@@ -131,29 +125,25 @@ a {
 
 /* HEADER */
 #header {
-    position: sticky; /* sticky navbar + body musí mít position: relative; */
+    position: sticky; 
     top: 0px;
-
     width: 100vw;
     height: 8.5vh;
-
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    
-    /*display: grid;
-    grid-template-columns: 1fr 2fr 1fr;*/
-   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background: var(--šedá);
-    
-
     border-bottom: 1vh solid var(--světlá-modrá);
-    box-shadow: 0px -5px 56px 0px rgba(0,0,0,0.49); /* https://www.cssmatic.com/box-shadow */
+    box-shadow: 0px -5px 56px 0px rgba(0,0,0,0.49);
     z-index: 5;
 }
 
 /* BRANDING */
 #branding {
+    height: 8vh;
+    display: flex;
     justify-content: center;
+    align-items: center;
     padding-left: 25px;
     font-size: 1rem;
     color: var(--tmavá-modrá);   
@@ -165,10 +155,12 @@ a {
 
 /* NAVBAR */
 #navbar {
-    height: 9vh;
+    position: absolute;
+    top: 0;
+    right: 910px;
+    height: 8vh;
     padding:0;
     margin: 0;
-    
 }
 
 #navbar a {
@@ -177,40 +169,26 @@ a {
 }
 
 #navbar ul {
-    position: absolute; /* Aby bylo možné určit pozici nezávisle na .logo */ 
+    position: absolute;
     display: flex;
     list-style: none;
-    /*background: #86bbd8;*/
     height: 100%;
     width: 45vw;
     justify-content: space-between;
-    align-items: center;
-    
-
-    /*left: 50%; /* odsazení 50% zleva */
-    /*transform: translate(-50%); /* Aby byly prvky umístěny přesně na střed, vycentrování */
-    /*padding-top: 0;
-    /*justify-content: center;*/    
+    align-items: center;   
 }
 
 #navbar ul li {
-    /*padding: 15px 25px 16px 25px; /*padding: zezhora zprava zespodu zleva*/
-    padding: 0px 25px 0px 25px;
+    padding: 0px 25px 0px 25px; /* top right bottom left */
     height: 100%;
     display: flex;
     align-items: center;
     white-space: nowrap;
-    
 }
 
 #navbar ul li:hover {   
     background: var(--světlá-modrá);
     height: 8.6vh;
-
-}
-
-#navbar ul li a {
-    
 }
 
 /* NAVBAR */
@@ -228,7 +206,6 @@ a {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-    
     text-align:center;
     color:var(--tmavá-modrá);
     background-size: cover;
@@ -252,9 +229,7 @@ a {
 #prinosy .boxes {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 6vh; /*20px*/
-    /*justify-content: center;
-    align-items: center;*/
+    grid-gap: 6vh; 
 }
 
 #prinosy .boxes .boxes-1 { 
@@ -272,14 +247,11 @@ a {
 }
 
 .boxes .box {
-    position: relative; /* Aby při .grow prvky neprocházely přes sticky navbar */
-
+    position: relative; 
     width: 30%;
     height: 35vh;
     text-align:center;
-    
     color: var(--šedá);
-    /*padding:10px;*/ 
 }
 
 .boxes .box i {
@@ -292,8 +264,7 @@ a {
     height: 17vh;
     width: 100vw;
     padding-top: 5vh;
-    background: var(--světlá-modrá);   
-    
+    background: var(--světlá-modrá);      
 }
 
 #citat-1 h3 {
@@ -312,7 +283,6 @@ a {
 #jak-zacit {
     height: 75vh;
     padding-top: 5vh;
-    
     color: var(--tmavá-modrá);
 }
 
@@ -332,7 +302,6 @@ a {
 .box2 {
     display: flex;
     grid-gap: 5vh;
-    
 }
 
 .box2 ul {
@@ -377,7 +346,6 @@ a {
 .box3 {
     display: flex;
     grid-gap: 5vh;
-
 }
 
 /* CITÁT-2 */
@@ -386,8 +354,6 @@ a {
     width: 100vw;
     padding-top: 5vh;
     background: var(--světlá-modrá);   
-    
-    
 }
 
 #citat-2 h3 {
@@ -406,9 +372,7 @@ a {
 #FAQ {
     height: 79vh;
     padding-top: 5vh;
-
     background: var(--šedá);
-    
     color: var(--tmavá-modrá);
 }
 
@@ -416,29 +380,19 @@ a {
     padding-bottom: 2vh;
 }
 
-
 #FAQ ul {
     padding-left: 5vh;  
 }
-
-
 
 #FAQ img {
     height: 82vh;
     width: auto;
 }
 
-
-
-
-
-
-
 /* FOOTER */
 #footer {
     height: 13vh;
     width: 100vw;
-    
     background: var(--tmavá-modrá); 
     padding-top: 5vh;
 }
@@ -461,8 +415,14 @@ a {
         box-shadow: none;
     }
 
+    #branding {
+        height: 7vh;
+    }
+
     /* MENU-BTN */
 	.menu-btn {
+        top: 13px; 
+	    right: 25px; 
         display: block;
         color: #000;
 	}
@@ -476,7 +436,7 @@ a {
         display: none;
     }
 
-    :target { /* Aby Navbar nepřekrýval prvek ke kterému vede link */
+    :target {
         scroll-margin-top: 50.4vh;
     }
 
