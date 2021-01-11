@@ -1,0 +1,31 @@
+.btn {
+  animation: pulse 2s infinite;
+
+  cursor: pointer;
+  display: inline-block;
+  
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 20px;
+
+  background: $darkBlue;
+  color: $grey;
+  font-size: 1.6rem;
+
+  height: 50px;
+  width: 246px;
+  padding: 5px 20px;
+  transition: 100ms;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+  }	
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(0.95);
+  }
+}

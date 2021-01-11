@@ -1,0 +1,25 @@
+#vyzva {
+  height: 69vh;
+  padding-top: 5vh;
+  line-height: 2;
+  color: $grey;
+  text-align: center;
+  background: $darkBlue;
+  h1 {
+    color: $lightBlue;
+    text-align: center;
+    margin-top: -1rem;
+  }
+  .app-photo {
+    text-align: right;
+    img {
+      height: 59vh;
+      width: auto;
+    }
+  }
+  ul {
+    text-align: left;
+    padding-left: 2rem;
+    padding-top: 1.2rem;
+  }
+}

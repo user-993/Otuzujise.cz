@@ -1,0 +1,244 @@
+
+$grey: #f2f2f2;
+$darkBlue:#2f4858;
+$lightBlue:#86bbd8;
+
+@import './a';
+@import './body';
+@import './box2';
+@import './box3';
+@import './branding';
+@import './btn';
+@import './btn2';
+@import './btn3';
+@import './citat-1';
+@import './citat-2';
+@import './container';
+@import './FAQ';
+@import './footer';
+@import './header';
+@import './highlight';
+@import './jak-zacit';
+@import './menu-btn';
+@import './navbar';
+@import './prinosy';
+@import './showcase';
+@import './vyzva';
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;    
+}
+
+/* GROW - Elemnent gets bigger on hover */
+.grow { 
+  transition: all .2s ease-in-out; 
+  &:hover { 
+    transform: scale(1.1);  
+    cursor: context-menu;
+  }
+}
+
+/* For navbar not to overlap link that it leads to */
+:target { 
+  scroll-margin-top: 8.4vh;
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 1068px) {
+  
+  /* HEADER */
+  #header {
+      grid-template-columns: repeat(2, 1fr);
+      box-shadow: none;
+  }
+
+  #branding {
+      height: 7vh;
+  }
+
+  /* MENU-BTN */
+  .menu-btn {
+    top: 13px; 
+    right: 25px; 
+    display: block;
+    color: #000;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  /* NAVBAR */
+  #navbar {
+      display: none;
+  }
+
+  :target {
+      scroll-margin-top: 50.4vh;
+  }
+
+  /* NAVBAR-2 */
+  #navbar-2 {
+    display: inline-block;
+    position: fixed;
+    width: 100%;
+    height: 43vh;
+    top: 8vh;
+    z-index: 8;
+    transform: translateX(150vh);
+    transition: transform 0.5s ease-in-out;     
+    .show {
+      transform: translateY(0);
+    }
+    ul {
+      padding-top: 2rem;
+      list-style: none;
+      height: 100%;
+      background: $lightBlue;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      li {
+        background: $lightBlue;
+        padding-top: 1.6vh;
+        padding-bottom: 1.6vh;
+      }
+    } 
+    a {
+      color: $darkBlue;
+      font-weight: bold;
+      &:hover{
+        color: $grey;
+      }
+    }
+  }
+
+  /* SHOWCASE */
+  #showcase {
+    background-position: center 0px;
+    padding-top: 20px;
+    height: 42vh;
+    h1 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+    a {
+      margin-top: 4rem;
+    }
+  }
+
+  .btn {
+      display: none;
+  }
+
+  /* PRINOSY */
+  #prinosy {
+    height: 181vh; 
+    .boxes {   
+      grid-gap: 0px;
+      .boxes-1 { 
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 0px;
+        height: 105vh;
+      }
+      .boxes-2 {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 0px;
+        height: 70vh;
+      }
+      .box {
+        width: 100%;
+      }
+    }
+  }
+
+  /* CITAT-1 */
+  #citat-1 {
+      padding: 1.2rem;
+  }
+
+  /* JAK ZACIT */
+  #jak-zacit {
+    height: 80vh;
+    .photo {
+      display: none;
+    }
+  }
+  
+  /* VÝZVA */
+  #vyzva {
+    height: 70vh;
+    .app-photo {
+      display: none;
+    }
+  }
+
+  .box3 {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 0px;
+  }
+
+  /* CITAT-2 */
+  #citat-2 {
+    padding: 1.5rem;
+    p {
+      margin-top: 0.5rem;
+    }
+  }
+
+  /* FAQ */
+  #FAQ {
+    height: 100vh;
+  }
+}
+
+
+
+@media(max-width: 770px) {
+
+  /* HEADER */
+  #branding {
+    padding-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* SHOWCASE */
+  #showcase h1 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  /* CITAT-1*/
+  #citat-1 {
+    height: 21vh;
+  }
+
+  /* JAK ZACIT */
+  #jak-zacit {
+    height: 110vh;
+  }
+
+  /* VYZVA */
+  #vyzva {
+    height: 90vh;
+  }
+
+  /* CITAT-2*/
+  #citat-2 {
+    height: 35vh;
+  }
+
+  /* FAQ */
+  #FAQ {
+    height: 130vh;
+  }
+}

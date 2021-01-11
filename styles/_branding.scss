@@ -1,0 +1,12 @@
+#branding {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 25px;
+  font-size: 1rem;
+  color: $darkBlue; 
+  i {
+    color: $lightBlue;
+  } 
+}

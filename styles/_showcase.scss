@@ -1,0 +1,18 @@
+#showcase {
+  width: 100vw;
+  height: 53vh;
+  padding-top: 50px;
+  background:url('../img/antarctica.jpg'); 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+  text-align:center;
+  color: $darkBlue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center -150px;
+  h1 {
+    font-size: 2.5rem;
+  }
+}
